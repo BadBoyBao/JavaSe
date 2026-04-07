@@ -1,34 +1,18 @@
-# 1. 构建工具产物 (Build tool artifacts)
-target/       # Maven 构建输出目录
-build/        # Gradle 构建输出目录
-.gradle/      # Gradle 缓存目录
+# 敏感配置文件
+# application-dev.yml
+# *dev*.yml
+# 环境配置文件
+.env
+.env.local
+.env.*.local
 
-# 2. 集成开发环境 (IDE) 配置
-.idea/        # IntelliJ IDEA 项目配置目录
-*.iml         # IntelliJ IDEA 模块文件
-*.iws
-*.ipr
-*.xml
-.project      # Eclipse 项目文件
-.classpath    # Eclipse 类路径文件
-.settings/    # Eclipse 设置目录
-
-# 3. 日志文件 (Log files)
+# 日志文件
 logs/
 *.log
 
-# 4. 操作系统生成文件 (OS generated files)
-.DS_Store     # macOS Finder 元数据
-Thumbs.db     # Windows 图片缩略图缓存
-
-# 5. 编译输出与打包文件 (Compiled & packaged files)
-*.class       # Java 字节码文件
-*.jar         # Java 归档文件
-*.war         # Web 应用归档文件
-*.ear
-
-# 6. 敏感信息与运行时配置 (Secrets & runtime config)
-application-*.properties
-application-*.yml
-*.secret
-.env
+# 编译输出
+target/
+# IDE配置
+.idea/
+*.iml
+.vscode/
