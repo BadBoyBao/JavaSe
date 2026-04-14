@@ -2,7 +2,9 @@ package com.IoDemo.InputStreamReader;
 
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.Reader;
 
 /**
@@ -19,12 +21,19 @@ public class InputStreamReaderDemo {
 
     public static void main(String[] args) {
         // 目标: 演示一个问题,不同编码读取乱码的问题
+        // 使用字符输入流InputStreamReader解决不同编码读取乱码的问题
         // 代码: UTF-8  文件 UTF-8 不乱码
         // 代码: UTF-8  文件 GBK 乱码
         try (
-                Reader reader = new FileReader(PATH) ;
+                // 先读取文件原始字节流
+                InputStream is = new FileInputStream(PATH) ;
+                // 指定字符集把原始字节流转换成字符输入流
+                Reader isr = new InputStreamReader(is , "GBK") ;
+
+//                // 1.创建一个字符缓冲输入流对象与源文件接通
+//                Reader reader = new FileReader(PATH) ;
                 // 创建缓冲字符输入流包装低级的字符输入流
-                BufferedReader bufferReader = new BufferedReader(reader)
+                BufferedReader bufferReader = new BufferedReader(isr)
 
         ) {
             // 循环改造:
