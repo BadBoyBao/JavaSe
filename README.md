@@ -2,4 +2,6 @@
 
 ## 目标:加强基础
 
-# 进度:面向对象->Lambda->String和ArrayList->泛型->集合->Map->Stream流->Io流
+# 进度:面向对象->Lambda->String和ArrayList->泛型->集合->Map->Stream流->Io流->多线程
+
+# 2026年4月14日17:08:35 开始学习多线程(非常重要)
